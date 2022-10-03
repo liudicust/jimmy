@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="JimmyLiu" /><meta name="description" content="网络包 网络包结构 网络设备 交换机 定义 交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="JimmyLiu" /><meta name="description" content="网络包 网络包结构 网络设备 交换机 交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即交换" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="网络基础" />
-<meta property="og:description" content="网络包 网络包结构 网络设备 交换机 定义 交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即" />
+<meta property="og:description" content="网络包 网络包结构 网络设备 交换机 交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即交换" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://liudicust.github.io/post/%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%8E%E8%B7%AF%E7%94%B1%E5%99%A8/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-10-03T16:08:35+08:00" />
 <meta property="article:modified_time" content="2022-10-03T16:08:35+08:00" />
 
 <meta itemprop="name" content="网络基础">
-<meta itemprop="description" content="网络包 网络包结构 网络设备 交换机 定义 交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即"><meta itemprop="datePublished" content="2022-10-03T16:08:35+08:00" />
+<meta itemprop="description" content="网络包 网络包结构 网络设备 交换机 交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即交换"><meta itemprop="datePublished" content="2022-10-03T16:08:35+08:00" />
 <meta itemprop="dateModified" content="2022-10-03T16:08:35+08:00" />
-<meta itemprop="wordCount" content="1227">
+<meta itemprop="wordCount" content="1223">
 <meta itemprop="keywords" content="网络设备," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="网络基础"/>
-<meta name="twitter:description" content="网络包 网络包结构 网络设备 交换机 定义 交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即"/>
+<meta name="twitter:description" content="网络包 网络包结构 网络设备 交换机 交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即交换"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"> 网络基础 </a>
             </div>
-          <span class="more-meta"> 1227 words </span>
+          <span class="more-meta"> 1223 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -151,20 +151,11 @@
             <li><a href="#转发原则">转发原则</a></li>
           </ul>
         </li>
-      </ul>
-    </li>
-    <li><a href="#路由器">路由器</a>
-      <ul>
-        <li>
+        <li><a href="#路由器">路由器</a>
           <ul>
             <li><a href="#转发原则-1">转发原则</a></li>
             <li><a href="#路由与交换的关系">路由与交换的关系</a></li>
-          </ul>
-        </li>
-        <li><a href="#路由的其他功能">路由的其他功能</a>
-          <ul>
-            <li><a href="#nat">NAT</a></li>
-            <li><a href="#包过滤">包过滤</a></li>
+            <li><a href="#路由的其他功能">路由的其他功能</a></li>
           </ul>
         </li>
       </ul>
@@ -182,21 +173,18 @@
 <h1 id="网络设备">网络设备</h1>
 <h2 id="交换机">交换机</h2>
 <blockquote>
-<p>定义</p>
+<p>交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即交换机的一个端口相当于计算机的网卡，但是不具备Mac地址（网卡本身具有mac地址，并且通过核对包内的接受方地址判断是否发给自己的数据），交换机端口不核对接受方Mac地址，直接放入缓冲区；
+放入缓冲区之后，基于Mac地址表来把数据转发到哪个端口上；</p>
 </blockquote>
-<pre><code>   交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即交换机的一个端口相当于计算机的网卡，但是不具备Mac地址（网卡本身具有mac地址，并且通过核对包内的接受方地址判断是否发给自己的数据），交换机端口不核对接受方Mac地址，直接放入缓冲区；
-   放入缓冲区之后，基于Mac地址表来把数据转发到哪个端口上；
-</code></pre>
 <h3 id="转发原则">转发原则</h3>
 <ol>
 <li>没有在地址表中发现转发规则的时候，向除了源端口外的所有端口转发，目标对象响应了包之后，交换机会记录下来，下次就不会把包发给所有端口了</li>
 <li>接受方Mac地址是广播地址的时候，交换机会将包转发给源端口外的所有端口（FF:FF:FF:FF:FF:FF是广播Mac地址）</li>
 <li>交换机不接受一个包直接返回给原端口，，会直接丢弃</li>
 </ol>
-<h1 id="路由器">路由器</h1>
+<h2 id="路由器">路由器</h2>
 <blockquote>
-<p>定义
-路由器的设计是将接收到的数据包按照路由表规则转发，内部的转发模块将包转发到目标对应的端口，端口模块按照硬件规则将包发送出去；与交换机不同的是，路由器的端口是具有Mac地址和IP地址的，也就是说，它在转发的时候是可以成为发送方和接受方的。在转发的包的时候，路由器端口会接受发给自己的以太网包，然后查询路由表根据IP地址来转发数据包</p>
+<p>路由器的设计是将接收到的数据包按照路由表规则转发，内部的转发模块将包转发到目标对应的端口，端口模块按照硬件规则将包发送出去；与交换机不同的是，路由器的端口是具有Mac地址和IP地址的，也就是说，它在转发的时候是可以成为发送方和接受方的。在转发的包的时候，路由器端口会接受发给自己的以太网包，然后查询路由表根据IP地址来转发数据包</p>
 </blockquote>
 <h3 id="转发原则-1">转发原则</h3>
 <ol>
@@ -212,17 +200,19 @@
 <li>Mac地址的获取通过Arp协议</li>
 </ol>
 <h3 id="路由与交换的关系">路由与交换的关系</h3>
-<pre><code>路由器与交换机之间的关系，从容易理解的角度上来说，就是IP和以太网的关系，IP协议本身没有传输包的功能，路由器将IP包装进了以太网包的数据中，委托以太网来传输；交换机是基于以太网设计的，路由器是基于IP协议设计的
-</code></pre>
-<h2 id="路由的其他功能">路由的其他功能</h2>
+<blockquote>
+<p>路由器与交换机之间的关系，从容易理解的角度上来说，就是IP和以太网的关系，IP协议本身没有传输包的功能，路由器将IP包装进了以太网包的数据中，委托以太网来传输；交换机是基于以太网设计的，路由器是基于IP协议设计的</p>
+</blockquote>
+<h3 id="路由的其他功能">路由的其他功能</h3>
 <p>随着互联网规模的扩大，固定方式来分配IP地址肯定是不够用的，所以又将地址分为公有地址和私有地址，于是将还没有分配的部分地址作为来私有地址范围：</p>
 <ul>
 <li>10.0.0.0 ~ 10.255.255.255</li>
 <li>172.16.0.0 ~ 172.31.255.255</li>
 <li>192.168.0.0 ～ 192.168.255.255</li>
 </ul>
-<p>那外的访问又需要IP地址怎么办，于是NAT方式出现了（我们仅仅需要加一层转换即可）</p>
-<h3 id="nat">NAT</h3>
+<p>那外的访问又需要IP地址怎么办，于是NAT方式出现了（我们仅仅需要加一层转换即可）
+<br><br></p>
+<h4 id="nat">NAT</h4>
 <p>如图所示：
 <img src="/img/nat.png" alt="" title="NAT的位置"></p>
 <center>
@@ -245,16 +235,16 @@
     color: #999;
     padding: 2px;"></div>
 </center>
-<p>一图胜千言,外网访问内网:
-<br><strong>需要事先有关联信息</strong>
-<img src="/img/nat_2.png" alt="" title="NAT的流程"></p>
+<p>一图胜千言,外网访问内网:</p>
+<p><img src="/img/nat_2.png" alt="" title="NAT的流程"></p>
 <center>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
     padding: 2px;"></div>
 </center>
-<h3 id="包过滤">包过滤</h3>
+<p><strong>需要事先有关联信息</strong></p>
+<h4 id="包过滤">包过滤</h4>
 <pre><code>包过滤正如字面意思，根据Mac头部，IP头部，TCP头部的内容按照事先设定的规则决定是否转发某数据包</code></pre>
 
     </div>
