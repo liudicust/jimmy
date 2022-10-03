@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on JimmyLiu</title>
-    <link>https://liudicust.github.io/post/</link>
-    <description>Recent content in Posts on JimmyLiu</description>
+    <title>网络基础 on JimmyLiu</title>
+    <link>https://liudicust.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</link>
+    <description>Recent content in 网络基础 on JimmyLiu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>JimmyLiu</copyright>
-    <lastBuildDate>Mon, 03 Oct 2022 16:08:35 +0800</lastBuildDate><atom:link href="https://liudicust.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Oct 2022 16:08:35 +0800</lastBuildDate><atom:link href="https://liudicust.github.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>网络基础</title>
       <link>https://liudicust.github.io/post/%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%8E%E8%B7%AF%E7%94%B1%E5%99%A8/</link>
@@ -15,15 +15,6 @@
       
       <guid>https://liudicust.github.io/post/%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%8E%E8%B7%AF%E7%94%B1%E5%99%A8/</guid>
       <description>网络包 网络包结构 网络设备 交换机 定义 交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即</description>
-    </item>
-    
-    <item>
-      <title>Why Blog</title>
-      <link>https://liudicust.github.io/post/why-blog/</link>
-      <pubDate>Mon, 03 Oct 2022 12:21:52 +0800</pubDate>
-      
-      <guid>https://liudicust.github.io/post/why-blog/</guid>
-      <description>为什么写blog 平时会看很多的材料和文章，有些好的东西还是想沉淀在一个稳妥的地方，方便回溯，所以写blog作为一个笔记本，整理一下知识点吧 会</description>
     </item>
     
   </channel>

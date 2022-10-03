@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>网络基础 - JimmyLiu</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="JimmyLiu" /><meta name="description" content="网络包 网络包结构 网络设备 交换机 定义 交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.104.1 with theme even" />
+
+
+<link rel="canonical" href="https://liudicust.github.io/post/%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%8E%E8%B7%AF%E7%94%B1%E5%99%A8/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="网络基础" />
+<meta property="og:description" content="网络包 网络包结构 网络设备 交换机 定义 交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://liudicust.github.io/post/%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%8E%E8%B7%AF%E7%94%B1%E5%99%A8/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-10-03T16:08:35+08:00" />
+<meta property="article:modified_time" content="2022-10-03T16:08:35+08:00" />
+
+<meta itemprop="name" content="网络基础">
+<meta itemprop="description" content="网络包 网络包结构 网络设备 交换机 定义 交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即"><meta itemprop="datePublished" content="2022-10-03T16:08:35+08:00" />
+<meta itemprop="dateModified" content="2022-10-03T16:08:35+08:00" />
+<meta itemprop="wordCount" content="1227">
+<meta itemprop="keywords" content="网络设备," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="网络基础"/>
+<meta name="twitter:description" content="网络包 网络包结构 网络设备 交换机 定义 交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Jimmy&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/posts/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Jimmy&#39;s Blog</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/posts/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">网络基础</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-10-03 </span>
+        <div class="post-category">
+            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"> 网络基础 </a>
+            </div>
+          <span class="more-meta"> 1227 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#网络包">网络包</a></li>
+    <li><a href="#网络设备">网络设备</a>
+      <ul>
+        <li><a href="#交换机">交换机</a>
+          <ul>
+            <li><a href="#转发原则">转发原则</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#路由器">路由器</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#转发原则-1">转发原则</a></li>
+            <li><a href="#路由与交换的关系">路由与交换的关系</a></li>
+          </ul>
+        </li>
+        <li><a href="#路由的其他功能">路由的其他功能</a>
+          <ul>
+            <li><a href="#nat">NAT</a></li>
+            <li><a href="#包过滤">包过滤</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="网络包">网络包</h1>
+<blockquote>
+<p>网络包结构</p>
+</blockquote>
+<p><img src="/static/img/net_package.png" alt=""></p>
+<h1 id="网络设备">网络设备</h1>
+<h2 id="交换机">交换机</h2>
+<blockquote>
+<p>定义</p>
+</blockquote>
+<pre><code>   交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即交换机的一个端口相当于计算机的网卡，但是不具备Mac地址（网卡本身具有mac地址，并且通过核对包内的接受方地址判断是否发给自己的数据），交换机端口不核对接受方Mac地址，直接放入缓冲区；
+   放入缓冲区之后，基于Mac地址表来把数据转发到哪个端口上；
+</code></pre>
+<h3 id="转发原则">转发原则</h3>
+<ol>
+<li>没有在地址表中发现转发规则的时候，向除了源端口外的所有端口转发，目标对象响应了包之后，交换机会记录下来，下次就不会把包发给所有端口了</li>
+<li>接受方Mac地址是广播地址的时候，交换机会将包转发给源端口外的所有端口（FF:FF:FF:FF:FF:FF是广播Mac地址）</li>
+<li>交换机不接受一个包直接返回给原端口，，会直接丢弃</li>
+</ol>
+<h1 id="路由器">路由器</h1>
+<blockquote>
+<p>定义
+路由器的设计是将接收到的数据包按照路由表规则转发，内部的转发模块将包转发到目标对应的端口，端口模块按照硬件规则将包发送出去；与交换机不同的是，路由器的端口是具有Mac地址和IP地址的，也就是说，它在转发的时候是可以成为发送方和接受方的。在转发的包的时候，路由器端口会接受发给自己的以太网包，然后查询路由表根据IP地址来转发数据包</p>
+</blockquote>
+<h3 id="转发原则-1">转发原则</h3>
+<ol>
+<li>由于路由器端口具有Mac地址，所以路由端口模块只接受发给自己的数据包</li>
+<li>路由器转发只匹配网络号，不匹配主机号</li>
+<li>路由器的子网掩码表示匹配目标地址的比特数量</li>
+<li>多条规则按照最长匹配的原则执行，相同规则按照跃点少执行</li>
+<li>如果路由器无法找到匹配记录则丢弃数据包并通过ICMP告知发送方</li>
+<li>路由表列：目标地址，子网掩码，网关地址，接口，跃点数</li>
+<li>与交换机不同的是转发表的维护方式，交换机在转发过程中维护转发表，路由表通过手动维护以及路由协议维护（RIP，OSPC,OSPF,BGP）</li>
+<li>数据包具有TTL，没经过一个路由器就会减1；</li>
+<li>转发的时候根据路由表，如果网关地址不为空，则按照该网关地址转发；如果网关列是空，则把IP头部的接受方地址作为转发目标</li>
+<li>Mac地址的获取通过Arp协议</li>
+</ol>
+<h3 id="路由与交换的关系">路由与交换的关系</h3>
+<pre><code>路由器与交换机之间的关系，从容易理解的角度上来说，就是IP和以太网的关系，IP协议本身没有传输包的功能，路由器将IP包装进了以太网包的数据中，委托以太网来传输；交换机是基于以太网设计的，路由器是基于IP协议设计的
+</code></pre>
+<h2 id="路由的其他功能">路由的其他功能</h2>
+<p>随着互联网规模的扩大，固定方式来分配IP地址肯定是不够用的，所以又将地址分为公有地址和私有地址，于是将还没有分配的部分地址作为来私有地址范围：</p>
+<ul>
+<li>10.0.0.0 ~ 10.255.255.255</li>
+<li>172.16.0.0 ~ 172.31.255.255</li>
+<li>192.168.0.0 ～ 192.168.255.255</li>
+</ul>
+<p>那外的访问又需要IP地址怎么办，于是NAT方式出现了（我们仅仅需要加一层转换即可）</p>
+<h3 id="nat">NAT</h3>
+<p>如图所示：
+<img src="/jimmy/static/img/nat.png" alt="" title="NAT的位置"></p>
+<center>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">NAT的位置</div>
+</center>
+<p><br><br></p>
+<blockquote>
+<p>NAT流程</p>
+</blockquote>
+<pre><code>在对外只能使用一个公有地址的情况下，使用不同的端口号来区别对待内网中的不同终端
+</code></pre>
+<p>一图胜千言,内网访问外网:</p>
+<p><img src="/jimmy/static/img/nat_1.png" alt="" title="NAT的流程"></p>
+<center>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"></div>
+</center>
+<p>一图胜千言,外网访问内网:
+<br><strong>需要事先有关联信息</strong>
+<img src="/jimmy/static/img/nat_2.png" alt="" title="NAT的流程"></p>
+<center>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"></div>
+</center>
+<h3 id="包过滤">包过滤</h3>
+<pre><code>包过滤正如字面意思，根据Mac头部，IP头部，TCP头部的内容按照事先设定的规则决定是否转发某数据包</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">JimmyLiu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2022-10-03
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87/">网络设备</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/why-blog/">
+            <span class="next-text nav-default">Why Blog</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://liudicust.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>JimmyLiu</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
