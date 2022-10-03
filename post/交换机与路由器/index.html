@@ -49,7 +49,7 @@
 <meta itemprop="name" content="网络基础">
 <meta itemprop="description" content="网络包 网络包结构 网络设备 交换机 交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即交换"><meta itemprop="datePublished" content="2022-10-03T16:08:35+08:00" />
 <meta itemprop="dateModified" content="2022-10-03T16:08:35+08:00" />
-<meta itemprop="wordCount" content="1223">
+<meta itemprop="wordCount" content="1217">
 <meta itemprop="keywords" content="网络设备," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="网络基础"/>
 <meta name="twitter:description" content="网络包 网络包结构 网络设备 交换机 交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即交换"/>
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"> 网络基础 </a>
             </div>
-          <span class="more-meta"> 1223 words </span>
+          <span class="more-meta"> 1217 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -173,14 +173,14 @@
 <h1 id="网络设备">网络设备</h1>
 <h2 id="交换机">交换机</h2>
 <blockquote>
-<p>交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即交换机的一个端口相当于计算机的网卡，但是不具备Mac地址（网卡本身具有mac地址，并且通过核对包内的接受方地址判断是否发给自己的数据），交换机端口不核对接受方Mac地址，直接放入缓冲区；
+<p>交换机的设计是将网络包（数据帧）原样的转发到目的地；交换机的接口和后面的电路部分加在一起称之为一个端口，即交换机的一个端口相当于计算机的网卡，但是不具备Mac地址(网卡本身具有mac地址，并且通过核对包内的接受方地址判断是否发给自己的数据),交换机端口不核对接受方Mac地址，直接放入缓冲区；
 放入缓冲区之后，基于Mac地址表来把数据转发到哪个端口上；</p>
 </blockquote>
 <h3 id="转发原则">转发原则</h3>
 <ol>
 <li>没有在地址表中发现转发规则的时候，向除了源端口外的所有端口转发，目标对象响应了包之后，交换机会记录下来，下次就不会把包发给所有端口了</li>
 <li>接受方Mac地址是广播地址的时候，交换机会将包转发给源端口外的所有端口（FF:FF:FF:FF:FF:FF是广播Mac地址）</li>
-<li>交换机不接受一个包直接返回给原端口，，会直接丢弃</li>
+<li>交换机不接受一个包直接返回给原端口，会直接丢弃</li>
 </ol>
 <h2 id="路由器">路由器</h2>
 <blockquote>
@@ -194,8 +194,8 @@
 <li>多条规则按照最长匹配的原则执行，相同规则按照跃点少执行</li>
 <li>如果路由器无法找到匹配记录则丢弃数据包并通过ICMP告知发送方</li>
 <li>路由表列：目标地址，子网掩码，网关地址，接口，跃点数</li>
-<li>与交换机不同的是转发表的维护方式，交换机在转发过程中维护转发表，路由表通过手动维护以及路由协议维护（RIP，OSPC,OSPF,BGP）</li>
-<li>数据包具有TTL，没经过一个路由器就会减1；</li>
+<li>与交换机不同的是转发表的维护方式，交换机在转发过程中维护转发表，路由表通过手动维护以及路由协议维护（RIP,OSPC,OSPF,BGP）</li>
+<li>数据包具有TTL，没经过一个路由器就会减1;</li>
 <li>转发的时候根据路由表，如果网关地址不为空，则按照该网关地址转发；如果网关列是空，则把IP头部的接受方地址作为转发目标</li>
 <li>Mac地址的获取通过Arp协议</li>
 </ol>
@@ -221,12 +221,10 @@
     color: #999;
     padding: 2px;">NAT的位置</div>
 </center>
-<p><br><br></p>
+<br>
 <blockquote>
-<p>NAT流程</p>
+<p>在对外只能使用一个公有地址的情况下，使用不同的端口号来区别对待内网中的不同终端</p>
 </blockquote>
-<pre><code>在对外只能使用一个公有地址的情况下，使用不同的端口号来区别对待内网中的不同终端
-</code></pre>
 <p>一图胜千言,内网访问外网:</p>
 <p><img src="/img/nat_1.png" alt="" title="NAT的流程"></p>
 <center>
