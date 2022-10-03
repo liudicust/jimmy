@@ -16,7 +16,7 @@
   </url>
   
   <url>
-    <loc>https://liudicust.github.io/posts/</loc>
+    <loc>https://liudicust.github.io/post/</loc>
     <lastmod>2022-10-03T12:21:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -30,14 +30,14 @@
   </url>
   
   <url>
-    <loc>https://liudicust.github.io/posts/why-blog/</loc>
+    <loc>https://liudicust.github.io/tags/why/</loc>
     <lastmod>2022-10-03T12:21:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://liudicust.github.io/tags/%E5%8D%9A%E5%AE%A2%E7%9B%AE%E6%A0%87/</loc>
+    <loc>https://liudicust.github.io/post/why-blog/</loc>
     <lastmod>2022-10-03T12:21:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
