@@ -3,28 +3,63 @@
   
   <url>
     <loc>https://liudicust.github.io/categories/</loc>
-    <lastmod>2022-10-03T16:08:35+08:00</lastmod>
+    <lastmod>2022-10-05T11:30:11+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://liudicust.github.io/tags/cgroups/</loc>
+    <lastmod>2022-10-05T11:30:11+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://liudicust.github.io/tags/container/</loc>
+    <lastmod>2022-10-05T11:30:11+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://liudicust.github.io/post/cpu-limit-in-k8s/</loc>
+    <lastmod>2022-10-05T11:30:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://liudicust.github.io/</loc>
-    <lastmod>2022-10-03T16:08:35+08:00</lastmod>
+    <lastmod>2022-10-05T11:30:11+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://liudicust.github.io/tags/k8s/</loc>
+    <lastmod>2022-10-05T11:30:11+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://liudicust.github.io/categories/kubernetes/</loc>
+    <lastmod>2022-10-05T11:30:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://liudicust.github.io/post/</loc>
-    <lastmod>2022-10-03T16:08:35+08:00</lastmod>
+    <lastmod>2022-10-05T11:30:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://liudicust.github.io/tags/</loc>
-    <lastmod>2022-10-03T16:08:35+08:00</lastmod>
+    <lastmod>2022-10-05T11:30:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
