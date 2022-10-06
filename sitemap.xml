@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://liudicust.github.io/</loc>
+    <lastmod>2022-10-05T20:17:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://liudicust.github.io/post/linux-grep/</loc>
+    <lastmod>2022-10-05T20:17:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://liudicust.github.io/post/</loc>
+    <lastmod>2022-10-05T20:17:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://liudicust.github.io/categories/</loc>
     <lastmod>2022-10-05T11:30:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -30,13 +51,6 @@
   </url>
   
   <url>
-    <loc>https://liudicust.github.io/</loc>
-    <lastmod>2022-10-05T11:30:11+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://liudicust.github.io/tags/k8s/</loc>
     <lastmod>2022-10-05T11:30:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -45,13 +59,6 @@
   
   <url>
     <loc>https://liudicust.github.io/categories/kubernetes/</loc>
-    <lastmod>2022-10-05T11:30:11+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://liudicust.github.io/post/</loc>
     <lastmod>2022-10-05T11:30:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

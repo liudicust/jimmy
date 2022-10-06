@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>JimmyLiu</copyright>
-    <lastBuildDate>Wed, 05 Oct 2022 11:30:11 +0800</lastBuildDate><atom:link href="https://liudicust.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Oct 2022 20:17:28 +0800</lastBuildDate><atom:link href="https://liudicust.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux Grep</title>
+      <link>https://liudicust.github.io/post/linux-grep/</link>
+      <pubDate>Wed, 05 Oct 2022 20:17:28 +0800</pubDate>
+      
+      <guid>https://liudicust.github.io/post/linux-grep/</guid>
+      <description>重学grep 命令 简单从文件中查找关键词 1 # grep root /etc/passwd 查找的时候忽略大小写 1 # grep -i root /etc/passwd 查找的时候忽略一些词 1 # grep -v root /etc/passwd 递归查找 1 2 grep -r -i root /etc grep -R -i</description>
+    </item>
+    
     <item>
       <title>Cpu Limit in K8s</title>
       <link>https://liudicust.github.io/post/cpu-limit-in-k8s/</link>
